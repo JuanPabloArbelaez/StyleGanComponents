@@ -18,8 +18,7 @@ def get_truncated_noise(n_samples, z_dim, truncation):
         truncation (float): the truncation value
     """
     truncated_noise = truncnorm.rvs(-truncation, truncation, size=(n_samples, z_dim))
-    
-    return truncated_noise
+    return torch.Tensor(truncated_noise)
 
 
 class MappingLayers(nn.Module):
